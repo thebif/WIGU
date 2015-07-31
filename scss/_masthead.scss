@@ -1,0 +1,114 @@
+.wrapper-masthead {
+
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $baseheight*6.5;
+  background-color: $purple;
+  @include box-sizing(border-box);
+
+  @include media($medium){
+    position: fixed;
+    height: ($baseheight*3)+80px; // add 40px for top/bottom border
+    border: 20px solid #fff;
+  }
+
+}
+
+.masthead {
+
+  position: relative;
+  width: auto;
+  height: $baseheight*6.5;
+  overflow: hidden;
+  padding: 0 $basespace;
+  text-align: center;
+  @include box-sizing(border-box);
+
+  @include media($medium){
+    height: ($baseheight*3)+40px; // add 40px for top/bottom border
+    text-align: left;
+  }
+
+}
+
+.brand {
+
+  position: relative;
+  width: $baseheight*4;
+  height: $baseheight*4;
+  top: 0;
+  margin: 0 auto;
+  @extend .ir;
+  background: url(../img/wigu-logo-purple.png) no-repeat top left;
+  background-size: cover;
+  @include box-sizing(content-box);
+
+  a {
+    // most of the markup and css for the brand/home link is done on the parent h1
+    // these rules are just to make sure there's an element with a shape to click on
+    display: block;
+    width: $baseheight*4;
+    height: $baseheight*4;
+  }
+
+  @include media($medium){
+    top: 50%;
+    float: left;
+    transform: translateY(-50%);
+  }
+
+}
+
+.toggle-nav-themes {
+
+  display: inline-block;
+  position: relative;
+  top: 0;
+  @extend .font-sans-black;
+  @include button(darken($purple,5%));
+  text-transform: uppercase;
+
+  @include media($medium){
+    top: 50%;
+    float: right;
+    transform: translateY(-50%);
+  }
+
+}
+
+.current-theme {
+  
+  display: none;
+  position: relative;
+  top: 50%;
+  float: right;
+  height: $basespace;
+  margin-left: $basespace/4;
+  transform: translateY(-50%);
+
+  span {
+    display: inline-block;
+    text-transform: uppercase;
+    @extend .font-sans-light;
+    line-height: $basespace;
+    color: #fff;
+  }
+
+  img {
+    display: block;
+    float: left;
+    width: $basespace;
+    height: $basespace;
+    margin-right: $basespace/4;
+    @include box-sizing(border-box);
+  }
+
+  @include media($tweener){
+    display: inline-block;
+  }
+
+}

@@ -1,0 +1,263 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  @extend .font-sans-reg;
+}
+
+.wrapper-main {
+  position: relative;
+}
+
+.wrapper-feature {
+
+  display: none;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $lightBlue;
+  @include box-sizing(border-box);
+
+  @include media($medium){
+    display: block;
+  }
+
+}
+
+.feature {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  img {
+
+    display: none;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: 100%;
+    border: 20px solid #fff;
+
+    @include media($tweener){
+      display: block;
+    }
+
+  }
+
+  .quiz {
+
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 112px;
+    @include box-sizing(border-box);
+
+    @include media($tweener){
+      width: 480px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      bottom: auto;  
+      border: $basespace/2 solid #fff;
+    }
+
+    .arrow {
+
+      display: none;
+      position: relative;
+      width: 0;
+      height: 0;
+      margin: -40px auto auto;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid #fff;
+
+      @include media($tweener){
+        display: block;
+        top: 50%; // center vertically (using negative top margin to get precise)
+        margin: -20px 0 0 -40px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 20px solid #fff;
+        border-left: 0;
+      }
+
+    }
+
+  }
+
+  .question {
+
+    display: none;
+    z-index: 3;
+    background-color: $lightBlue;
+
+    @include media($tweener){
+      display: block;
+    }
+
+  }
+  
+  .answer {
+
+    z-index: 2;
+    background-color: $darkBlue;  
+
+    h1 {
+      @extend .font-sans-light;
+      font-size: $font-size-h3;
+      margin-bottom: $baseheight/2;
+    }
+
+  }
+
+  .btn-back {
+  
+    display: none;
+    position: absolute;
+    z-index: 3;
+    right: $basespace;
+    top: $basespace*4;
+    @extend .font-sans-light;
+    font-size: $font-size-h4;
+    color: #fff;
+    cursor: pointer;
+  
+    &:hover {
+      color: $paleBlue;
+    }
+
+    @include media($tweener){
+      display: block;
+    }
+
+  }
+  
+  .closed {
+
+    bottom: 0; // would normally be 100%, but we're hiding the question panel
+    
+    @include media($tweener){
+      right: -480px;
+      bottom: auto;
+    }
+
+  }
+  
+  .open {
+
+    bottom: 0;
+
+    @include media($tweener){
+      right: 0;
+      bottom: auto;
+    }
+
+  }
+  
+  .content-wrapper {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: $baseheight $basespace/2 $baseheight;
+    color: #fff;
+
+    @include media($medium){
+      padding: $baseheight $basespace $baseheight*1.5;
+    }
+
+    h1 {
+
+      @extend .font-sans-black;
+      margin-bottom: $baseheight;
+      font-size: $font-size-h4;
+
+      @include media($medium){
+        font-size: $font-size-h3;
+      }
+
+      @include media($tweener){
+        font-size: $font-size-h2;
+      }
+
+    }
+
+    p {
+
+      margin: $baseheight/2 0;
+      font-size: $font-size-base;
+
+      @include media($tweener){
+        font-size: $font-size-h5;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0; // this is for the .hashtag
+      }
+
+    }
+
+  }
+  
+  .radio {
+
+    font-size: $font-size-base;
+
+    @include media($tweener){
+      margin-bottom: $baseheight/2;
+      font-size: $font-size-h4;
+    }
+
+  }
+
+  input[type="radio"]{
+    color: $lightBlue;
+    background-color: $lightBlue;
+    border: 3px solid #fff;
+  }
+  
+  .quiz-choice {
+    margin-right: $basespace/4;
+  }
+  
+  .answer-message {
+
+    display: none;
+    margin-right: $basespace/4;
+    color: $paleBlue;
+
+    @include media($tweener){
+      display: inline-block;
+    }
+
+  }
+
+  .hashtag {
+
+    @include button(darken($darkBlue,5%));
+    font-size: $font-size-base !important;
+    text-transform: uppercase;
+    cursor: pointer;
+
+  }
+
+}
+
+.anim {
+  @include transition(all .4s);
+}
+
+.topauto {
+  top: auto !important;  
+}

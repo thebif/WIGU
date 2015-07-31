@@ -1,0 +1,138 @@
+.basic {
+
+  width: auto;
+  margin: $baseheight $basespace/2 0;
+
+  @include media($medium){
+    margin: 152px + $baseheight $basespace*1.5 0;
+  }
+
+  @include media($large){
+    @include outer-container;
+    width: 1028px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    color: $darkBlue;
+  }
+
+  .main {
+
+    width: auto;
+    padding-bottom: $baseheight*3;
+
+    @include media($large){
+      @include span-columns(8);
+      padding-right: $basespace;
+    }
+
+    h1 {
+
+      text-align: center;
+
+      @include media($medium){
+        text-align: left;
+      }
+
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: $baseheight;
+      margin-bottom: $baseheight;
+    }
+
+    em {
+
+      display: block;
+      @extend .font-sans-light;
+      font-size: $font-size-h4;
+      line-height: 1;
+      color: $lightBlue;
+
+      @include media($medium){
+        font-size: $font-size-h3;
+      }
+
+    }
+
+    strong {
+      @extend .font-sans-black;
+      color: $lightBlue;
+    }
+
+  }
+
+  .side {
+
+    width: auto;
+    padding-bottom: $baseheight*3;
+
+    @include media($large){
+      @include span-columns(4);
+    }
+
+    h1 {
+
+      text-align: center;
+
+      @include media($medium){
+        text-align: left;
+      }
+
+    }
+
+  }
+
+  .wide {
+
+    overflow: hidden;
+    padding-bottom: $baseheight*3;
+
+    h1, p {
+      text-align: center;
+      margin-bottom: $baseheight;
+    }
+
+    h1 + p {
+      margin-bottom: $baseheight*2;
+    }
+
+  }
+
+  .cast {
+
+    margin-bottom: $basespace/2;
+
+    @include media($medium){
+      @include span-columns(6);
+      &:nth-child(2n+2){
+        @include omega();
+      }
+    }
+
+  }
+
+  .contact-person {
+    display: block;
+    margin: $baseheight/2 0;
+    strong {
+      color: $lightBlue;
+    }
+  }
+
+  .contact-email {
+    display: block;
+    a {
+      color: $lightBlue;
+      text-decoration: none;
+      border-bottom: 1px solid $lightBlue;
+      padding-bottom: 1px;
+    }
+  }
+
+}

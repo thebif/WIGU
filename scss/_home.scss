@@ -1,0 +1,80 @@
+.page-home {
+
+  .wrapper-masthead {
+    position: relative;
+    z-index: 0;
+    height: 100%;
+    background: url(../img/bg-page-home.jpg) 50% 50%;
+    background-size: cover;
+  }
+
+  .masthead {
+
+    height: auto;
+    top: 25%;
+    transform: translateY(-25%);
+    text-align: center;
+
+    @include media($medium){
+      top: 20%;
+      transform: translateY(-20%);
+    }
+
+  }
+
+  .brand {
+
+    float: none;
+    width: $baseheight*8;
+    height: $baseheight*8;
+    top: auto;
+    margin: 0 auto $baseheight;
+
+    // fill out graphic; make it a square again
+    border-right: 20px solid $purple;
+    border-left: 20px solid $purple;
+
+    transform: translateY(0);
+
+    @include media($medium){
+      width: $baseheight*10;
+      height: $baseheight*10;
+      // fill out graphic; make it a square again
+      border-right: 40px solid $purple;
+      border-left: 40px solid $purple;
+    }
+  
+  }
+
+  .toggle-nav-themes {
+
+    display: inline-block;
+    top: auto;
+    float: none;
+    transform: translateY(0);
+
+  }
+
+  .ext-youtube {
+
+    display: inline-block;
+    position: relative;
+    float: none;
+    @include button(darken($purple,5%));
+    @extend .font-sans-black;
+    text-transform: uppercase;
+    
+  }
+
+  .footer-content {
+
+    @include media($medium){
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-top: 20px solid #fff;
+    }
+  
+  }
+
+}

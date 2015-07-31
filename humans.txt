@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Design and Development: Jeff Drury, Business Innovation Factory
+    Site: When I Grow Up
+    Twitter: @druryjeff
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    SASS, Bourbon, Neat
+    jQuery, Modernizr
+    PHP Templating
