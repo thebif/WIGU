@@ -6,4 +6,3 @@ Website for When I Grow Up
 - The visual grid used in the layout is managed in jQuery to dynamically calculate grid section sizing (i.e. creating square grid sections)
 - The site is very responsive in response to the usage patterns of the target audience. (In the campaign pilot, over 75% of users accessed the site on a smart phone.)
 - The site uses fonts from Typekit (Freight Sans Pro, Freight Text Pro). They are accessible via Typekit only when served from the subdomain http://wigu.businessinnovationfactory.com/
-- The site uses fonts from Typekit (Freight Sans Pro, Freight Text Pro). They are accessible via Typekit only when served from the subdomain http://wigu.businessinnovationfactory.com/
